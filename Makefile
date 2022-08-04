@@ -3,13 +3,13 @@
 AS = nasm
 ASBIN = -f bin
 
-boot: boot_sector.bin
-	qemu-system-x86_64 boot_sector.bin
+boot: boot.bin
+	qemu-system-i386 boot.bin
 
-boot_sector.bin:
-	$(AS) $(ASBIN) boot_creator.asm -o boot_sector.bin
+boot.bin: boot.asm
+	$(AS) $(ASBIN) boot.asm -o boot.bin
 
 .PHONY: boot clean
 
 clean:
-	rm boot_sector.bin
+	rm *.bin
