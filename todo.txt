@@ -1,0 +1,38 @@
+bootloader
+    need
+        setup 16-bit segment registers and stack
+        print startup message
+        check presence of PCI, CPUID, MSRs
+        enable and confirm enabled A20 line
+        load GDTR
+        inform BIOS of target processor mode
+        get memory map from BIOS
+        locate kernel in filesystem
+        allocate memory to load kenel image
+        load kernel image into buffer
+        enable graphics mode
+        check kernel image ELF headers
+        enable long mode (since 64 bit)
+        allocate and map memory for kernel segments
+        setup stack
+        setup COM serial output port
+        setup IDT
+        disable PIC
+        check presence of CPU features (NX< SMEP, x87, PCID, global pages, TCE, WP, MMX, SSE, SYSCALL), enable them
+        assign a PAT to write combining
+        setup FS/GS base
+        load IDTR
+        enable APIC and setup using information in ACPI tables
+        setup GDT
+        setup TSS
+
+    could
+        memory map detection
+        detect available video modes
+        load additional files?
+
+real -> protected
+    disable interrupts
+    set GDT
+    set PE bit of CR0
+    set registers and do a far jump to kernel

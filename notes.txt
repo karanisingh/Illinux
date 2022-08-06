@@ -1,0 +1,19 @@
+x86_64 Linux
+    first six function arguments are passed in registers
+        rdi, rsi, rdx, rcx, r8, r9
+        rest are passed on the stack
+    
+Real Mode
+    Memory Addressing
+        Segment:Offset
+            PhysicalAddress = Segment * 16 + Offset
+    Addressing Modes
+        [bx + c]
+        [si + c]
+        [di + c]
+        [bp + c]
+        [bx + si + c]
+        [bx + di + c]
+        [bp + si + c]
+        [bp + di + c]
+        [address]
