@@ -37,6 +37,6 @@ make boot
 ```
 
 ## Progress
-Dummy boot sector
-Function to print strings using BIOS TTY mode
+Dummy boot sector  
+Function to print strings using BIOS TTY mode  
 Function to print hex values using BIOS TTY mode
