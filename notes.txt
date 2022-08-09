@@ -2,7 +2,7 @@ x86_64 Linux
     first six function arguments are passed in registers
         rdi, rsi, rdx, rcx, r8, r9
         rest are passed on the stack
-    
+
 Real Mode
     Memory Addressing
         Segment:Offset

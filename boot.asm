@@ -13,9 +13,10 @@ _start:
 %include "print_string16.asm"  ; include function to print message using BIOS
 
 BOOT_MESSAGE db 'Starting Boot', 0xa, 0
+HEX_OUT db '0x0000', 0xa, 0
 
 
 times 510-($-$$) db 0           ; fill in the rest of the boot sector
-dw 0xAA55                       ; add magic numbers signifying end of boot sector
+dw 0xaa55                       ; add magic numbers signifying end of boot sector
 
 
