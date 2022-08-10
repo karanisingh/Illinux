@@ -10,7 +10,7 @@ _start:
     call print_string16 
     jmp $                       ; temporary infinite loop
 
-%include "print_string16.asm"  ; include function to print message using BIOS
+%include "helpers/print_string16.asm"  ; include function to print message using BIOS
 
 BOOT_MESSAGE db 'Starting Boot', 0xa, 0
 HEX_OUT db '0x0000', 0xa, 0
