@@ -13,11 +13,14 @@ h_loop:
     and ax, di          ; ax now holds the hex value    eg. 0xF & 0x1234 = 0x4
     cmp ax, 0x9          ; now figure out if it is a letter or number
     jg letter
+
 number:
     add ax, 48        ; if number, add 0x30 to get the correct ASCII value
     jmp iter
+
 letter:
     add ax, 87        ; if letter, add 0x61 to get the correct ASCII value
+
 iter:
     mov [si + bx], al
     shr di, 4           ; get the next digit
